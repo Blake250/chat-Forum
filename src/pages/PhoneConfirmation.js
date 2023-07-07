@@ -19,15 +19,35 @@ const PhoneConfirmation = () => {
      <p>
           By entering your number, you are agreeing to our {" "}
           <span>Terms of services and privacy policy.</span>
+       
            Thanks.   
      </p>
-     <Link className= "primaryBtn d-flex align-items-center justify-content-center" exact to={"/code-confirm"} > Next <img src="./images/right-arrow.svg" alt="" /> </Link>
+     <StyledLink exact to={"/code"} >  <div> Next <img src="./images/right-arrow.svg" alt="" /> </div>   </StyledLink>
      
     </Phone>
   );
 };
 
 export default PhoneConfirmation;
+
+const StyledLink = styled(Link)`
+background-color:blue;
+padding:5px;
+border-radius:50px;
+
+div{
+  text-align:center !important;
+  color:white;
+  padding-left:5px;
+  
+}
+
+
+
+
+
+`
+
 
 const Phone = styled.div`
   padding: 7em 3.7em;
@@ -61,8 +81,8 @@ const Phone = styled.div`
     
   }
   a{
-    position : absolute;
+  /*  position : absolute;
     top : 10px;
-    left : 10px
+    left : 10px*/
   }
 `

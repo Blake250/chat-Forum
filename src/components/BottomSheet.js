@@ -1,58 +1,109 @@
-import React from 'react';
+
+import React,{useState} from 'react';
 import SwipeableBottomSheet from "react-swipeable-bottom-sheet";
 import styled from "styled-components";
+import StartRoom from './bottomSheets/StartRoom'
+import  NewRoom from "./bottomSheets/NewRoom";
 
-import StartRoom from './bottom-sheets/StartRoom'
+ const BottomSheet =  (props)=> {
+    //const [setGroup, useSetGroup] = useState("")
 
+ 
+       
 
-export default function BottomSheet(props) {
-    return ( <
-        div >
-        <
-        SwipeableBottomSheet open = { props.sheetVisible }
+     
+    
+    return ( 
+        < Container>
+    
+        <SwipeableBottomSheet
+    
+    overlay={true}
+        open = { props.sheetVisible }
         onChange = {
             () => {
                 props.setSheetVisible(!props.sheetVisible)
-                props.setItemsVisible(true)
-            }
+                props.setItemsVisible(true)  }
         }
-        fullScreen = { props.sheetTitle == 'room detail' ? true : false } >
-        <
-        div style = {
-            { backgroundColor: props.sheetTitle = "profile" ? "transparent" : " " } } >
+        fullScreen = { props.sheetTitle === 'room detail' ? true : false }>
+        
+            
+           
+       <div style = {
+             { backgroundColor: props.sheetTitle === "profile" ? "transparent" : " " ,
+          //  height:"250px", 
+            overflowY:"hidden",
+            // zIndex:1,
+          
+          
+            
+             } } >  
+                 
+            {  props.sheetTitle === "new room" ? (
+            <NewRoom
+             setSheetCreateRoom = {props.setSheetCreateRoom}
+            cardDetail = {props.cardDetail}
+           /* setSheetVisible = { (item)=> {
+               props.setSheetVisible(item)
+               props.setItemsVisible(true)
+                
+            }}*/
+            setSheetVisible={props.setSheetVisible}
+            setItemsVisible = {props.setItemsVisible}
+            
+            
+            
+            />
+             
+           ) : props.sheetTitle === "start room" ? (
 
-        <
-        StartRoom setSheetCreateRoom = { props.setSheetCreateRoom }
-        setSheetVisible = {
-            (items) => {
-                props.setSheetVisible(items);
-                props.setItemsVisible(true)
+                <StartRoom 
+              //  cardDetail = {props.cardDetail}
+                setSheetCreateRoom = { props.setSheetCreateRoom }
+             
+                setSheetVisible = {  (item)=>{
+              
+                   
+                    props.setSheetVisible(item);
+                   
+                    props.setItemsVisible(true); 
+                       
+
+                }
+               
             }
+            />
+            ) :(
+            " "
+            )
+            
+            
+            
         }
-        />
+        
 
-
-        <
-        /div>
-
-
-        <
-        /SwipeableBottomSheet>
-
-
-        <
-        /div>
+        </div>
+ 
+        </SwipeableBottomSheet>
+       
+              </Container>
     )
 }
 
+export default BottomSheet;
 
 
-const Sheet = styled.div `
-div{background-color: #ffffff;
-border-radius: 1.5 1.5 0 0;
-padding: 1.5em 1em;
-position: relative;
-height: 100%;
-}
+const Container = styled.div `
+//background-color: #ffffff;
+//background-color : #eeeee8;
+//border-radius: 1.5 1.5 0 0;
+//padding: 3em 1em;
+//position: relative;
+
+//display: flex;
+  //flex-direction: column;
+ // flex: 1;
+
+ background-color:#f2f0e4;
 
 `

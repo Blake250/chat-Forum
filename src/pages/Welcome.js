@@ -14,11 +14,11 @@ const Welcome = () => {
         <WelcomeInfo>
         
         <p> Hello, your are welcome to our Power room where you get more information concerning anything that is a burden to you, we answer question thrown by our members, that is why we stand out as the best.You can visit the site using the link below and see things
-        for your self, including tetimnoies from our distinguish members who have gotten solution to their problems.People give testimonies on daily basis of how their problems are being solved without them paying any money to any one
+        for your self, including testimonies from our distinguish members who have gotten solution to their problems.People give testimonies on daily basis of how their problems are being solved without them paying any money to any one
         for those 
         </p>
        <p> Hello, your are welcome to our Power room where you get more information concerning anything that is a burden to you, we answer question thrown by our members, that is why we stand as the best.You can visit the site using the link below and see things
-        for your self, including tetimnoies from our distinguish members which has gotten solution to their problems People give testimonies on daily basis of how their problems are being solved without them paying any money to any one
+        for your self, including testimonies from our distinguish members which has gotten solution to their problems People give testimonies on daily basis of how their problems are being solved without them paying any money to any one
         for those advice. 
         </p>
 
@@ -27,9 +27,9 @@ const Welcome = () => {
         <LayOuts>
 
         
-        <Link exact to = { "./get_username " } >
+        < StyledLink  to={ "/invite" } >
         Get Your username { " " } { /*<img src="" alt="" />*/ } 
-        </Link>
+        </StyledLink>
 
         
         <Clicker>
@@ -50,18 +50,16 @@ const Welcome = () => {
 export default Welcome;
 
 const Container = styled.div `
-    padding: 2.5em 1.0em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+  padding: 2.5em 1.0em;
+    
+    width:100%;
     background-color: #dfdcce;
-    align-items: flex-start
+    height:40rem;
+
 
 `
 const WelcomeInfo = styled.div `
 overflow: auto;
-height:253px;
 
 p{
     margin-bottom: 2em;
@@ -85,11 +83,22 @@ flex-direction: column;
  
 `
 
+ const  StyledLink = styled(Link)`
+
+ background-color:darkblue;
+ padding:8px;
+ border-radius:20px;
+ font-size:14px;
+ font-weight:bold;
+ text-align:center;
+`
+
 const Clicker = styled.div `
-font-size: 0.875em;
+font-size: 11px;
 color: var(--btnBGColor);
-font-weight: 400;
+font-weight: 600;
 text-decoration : none;
 font-style : normal;
+margin-top:3px;
 
 `

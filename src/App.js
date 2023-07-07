@@ -1,16 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './pages/Welcome';
@@ -21,6 +10,8 @@ import CoderConfirm from './pages/CoderConfirm';
 import AllowNotification from './pages/AllowNotification';
 import AppLayout from './pages/layouts/AppLayout';
 import Home from './pages/Home';
+import Explorer from './pages/Explorer';
+import Profile from './pages/Profile';
 
 
 
@@ -34,7 +25,7 @@ function App() {
         <Routes>
 
         
-        <Route path = '/'
+        <Route path = '/*'
         element = { <Welcome/> }
         />   
         <Route path = '/invite'
@@ -48,18 +39,21 @@ function App() {
         <Route path = '/code'
         element = { <CoderConfirm/> }
         />  
-        <Route path = '/allow-notification'
+        <Route path = '/notification'
         element = { <AllowNotification/> }
         /> 
 
         
-        </Routes> 
-        <Routes>
         
-        <Route path = '/applayout'
+       
+        
+        <Route path = '/appLayout'
         element = { <AppLayout/> }/> 
         
         <Route path='/home' element={<Home/>}/>
+
+        <Route  path='/explorer' element={<Explorer/>} />
+        <Route  path='/profile' element={<Profile/>} />
        
 
        

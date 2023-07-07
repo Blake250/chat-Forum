@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const AllowNotification = () => {
   return (
@@ -8,8 +9,8 @@ const AllowNotification = () => {
      
   <StylerA >
       <div className='text-center'>
-            <h1 className='mb-4'>last, important step </h1>
-        <h1 className='mb-3'>Enable notofication to know when people are talking</h1>
+            <h3 className='mb-2'>Last Important Step </h3>
+        <h5 className='mb-2'>Enable notification to know when people are talking</h5>
          
 
       </div>
@@ -29,9 +30,9 @@ const AllowNotification = () => {
                        Allow
                      </Link>
             
-                         <div>
+                        
                          <Pointer src="/images/upward-arrow.svg" />
-                         </div>
+                         
                      </div>   
 
              </StylerB>
@@ -54,7 +55,7 @@ const StylerA = styled.div`
   flex-direction : column;
   height: 100vh;
   background-color : #f2f0e4;
-  border-radius : 1em
+ // border-radius : 1em;
 
 
 
@@ -77,6 +78,17 @@ a{
     text-align: center
     
 
+};
+
+div{
+   font-size:15px;
+
+   h4{
+    width:250px;
+   }
+   h3{
+    margin-top:10px;
+   }
 }
  
 
@@ -85,10 +97,10 @@ a{
 const Pointer = styled.img`
 position: absolute;
 
-right: 20px;
-left: 333px
+right: 75px;
+//left: 333px
 
-
+bottom:-12px;
 
     
 `
@@ -97,7 +109,9 @@ const StylerB = styled.div`
 
   border-radius : 1em;
   background-color : #ffffff;
-  box-shadow : 0px 0px 5px #d3aaaa
+  box-shadow : 0px 0px 5px #d3aaaa;
+  position: relative;
+
 h3{
     font-size : 1em;
     font-weight: 500;

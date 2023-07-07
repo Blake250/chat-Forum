@@ -3,48 +3,69 @@ import styled from "styled-components"
 import DailyInfoCard from "../Data/DailyInfoCard.json"
 
 const DailyCard = () => {
-    return ( <
-        div style = {
-            { marginBottom: "-55px" } } >
-        <
-        Daily >
+    return ( 
+        < Container style = {
+            { marginBottom: "-55px" }} >
+        
+        <Daily>
 
         {
-            DailyInfoCard.map((items) => ( <
-                DailyA >
-                <
-                span > { items.time } < /span> <
-                div >
-                <
-                span > { items.title } < /span> <
-                p > { items.description } < /p> <
-                /div> <
-                /DailyA>
+            DailyInfoCard.map((items) => ( 
+               <DailyA key={items.id} >
+                
+                <span  > { items.time } </span> 
+                <div>
+                
+               <span> { items.title } </span> 
+                <p> { items.description } </p> 
+                </div> 
+               </DailyA>
 
 
             ))
-        }
-
-
-        <
-        /Daily> <
-        /div>
+              }
+      
+      
+              
+              </Daily> 
+              </Container>
     )
 }
 
 export default DailyCard
 
+const Container = styled.div`
+background-color:#f2f0e4;
+//position: relative;
+
+`
+
+
 
 const Daily = styled.div `
 
-background-color: #f0f0e4;
+//background-color: #f0f0e4;
+background-color : white;;
 padding: 1em 1em;
 border-radius: 3em;
+margin: 0 15px;
+//z-index:5;
+//position: relative;
+
+@media (max-width:768px) {
+  margin: 0 !important;
+//  padding: 1em 1em;
+//border-radius: 3em;
+
+
+}
+
 
 div{
   display: flex;
 align-items: flex-start;
 margin-bottom: 1em;
+
 }
 
 

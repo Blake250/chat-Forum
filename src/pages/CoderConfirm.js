@@ -6,7 +6,7 @@ const CoderConfirm = () => {
     return ( 
         <div>
         
-        <Styler className = 'text-center' >
+        <Styler >
         
         <Link exact to = { '/get-username' }>
      
@@ -18,10 +18,10 @@ const CoderConfirm = () => {
         <h1 > Enter the code we just texted you </h1> 
        <input type = "text" />
         
-       <p className = 'mt-2' > didn 't recieve it? <span>tap to resend</span></p> 
-        <Link exact to = { "/allow-notification" }
-        className = 'primaryBtn d-flex align-items-center' > Next < img src = "./images/right-arrow.svg"
-        alt = "" /> </Link> 
+       <p > didn't receive it? <span>tap to resend</span></p> 
+        <StyledLink exact to = { "/notification" }
+       >  <div className='btn' >  Next < img src = "./images/right-arrow.svg"
+        alt = "" />  </div>    </StyledLink> 
         </Styler>
 
         
@@ -30,6 +30,34 @@ const CoderConfirm = () => {
 }
 
 export default CoderConfirm
+
+
+const StyledLink = styled(Link)`
+background-color:blue;
+padding:5px;
+border-radius:50px;
+//line-height:0;
+
+div{
+  text-align:center !important;
+  color:white;
+  padding-left:5px;
+ // line-height:0.5;
+ 
+  
+}
+
+
+
+
+
+`
+
+
+
+
+
+
 
 const Styler = styled.div `
   padding: 7em 3.7em;
@@ -40,10 +68,16 @@ const Styler = styled.div `
   height: 100vh;
   background-color : #f2f0e4;
 
+ 
   h1{
     width: 300px;
     max-width: 350px;
     margin-bottom: 1em;
+
+    text-align:center;
+    font-weight:600;
+    font-size:20px;
+    
   };
 
   p{
@@ -52,14 +86,11 @@ const Styler = styled.div `
     text-align: center;
     border: none;
     outline: none;
+    font-weight:400;
+    font-size:14px;
   }
 
-  a{
-    position: absolute;
-    top: 0;
-    left: 0;
-
-  }
+ 
  
 
   

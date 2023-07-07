@@ -34,7 +34,7 @@ const Header = () => {
         
           
         
-       <NavLink to={'/activity'}>
+       <NavLink to={'/explorer'}>
         <Head src='./images/bell.svg'/>
         </NavLink>
         

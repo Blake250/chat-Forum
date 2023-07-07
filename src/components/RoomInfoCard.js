@@ -7,7 +7,7 @@ import {BsChatDots, BsChatDotsFill, BsFillPersonFill} from "react-icons/bs";
 
 const RoomInfoCard = (props) => {
   return (
-     <div  style={{marginBottom:"-20px"}}>
+     <Container  style={{marginBottom:"-20px"}}>
      {RoomCard.map((items)=>(
          <>
             
@@ -48,7 +48,7 @@ const RoomInfoCard = (props) => {
 
      ))}
 
-     </div>
+     </Container>
   )
 }
  
@@ -57,9 +57,22 @@ const RoomInfoCard = (props) => {
 export default RoomInfoCard
 
 
+const Container = styled.div`
+
+background-color:#f2f0e4;
+//margin-bottom:800px;
+//background-color:white;
+//height:120vh;
+
+`
+
+
+
 
 const Card = styled.div`
-div{background-color : #eeeee8;
+
+div{
+   background-color : white;;
 padding: 0.5em 1em;
 border-radius : 2.5em;
 border : none;
